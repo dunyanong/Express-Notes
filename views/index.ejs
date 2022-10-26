@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body>
+
+    <%- include('partials/nav.ejs') %>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+
+        <!--EJS logics-->
+        <% if(blogs.length > 0) {%>
+            <% blogs.forEach(blogs => { %>
+                <h3 class="title"><%= blogs.title%></h3>
+                <p class="snippet"><%= blogs.snippet%></p>
+            <% }) %>
+        <% } else{%>
+            <p>Oops, there are currently no blogs available here </p>
+        <% }%>
+        <% const name = 'mario'; %>
+        <p><%= name %></p>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
